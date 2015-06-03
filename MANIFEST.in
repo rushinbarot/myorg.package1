@@ -1,0 +1,2 @@
+include myorg/package1/static/*
+include myorg/package1/scripts/*
