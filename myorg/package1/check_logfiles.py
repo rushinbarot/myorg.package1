@@ -15,3 +15,4 @@ def check_logfiles():
         summ += int(parts[1])
     print "sum:",summ
     return summ
+

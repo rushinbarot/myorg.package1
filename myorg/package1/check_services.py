@@ -3,6 +3,7 @@
 import requests
 import time
 import logging
+import os
 logger = logging.getLogger(__name__)
 SERVICES = ['google.com','python.org','rei.com']
 def check_services(services=None):
