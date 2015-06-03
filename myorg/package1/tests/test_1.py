@@ -1,7 +1,7 @@
 
 from myorg.package1.check_services import check_services
 
-def test_2():
+def test_1():
     c =  check_services()
     okay = False
     for ci in c:
