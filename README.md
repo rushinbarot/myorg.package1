@@ -15,10 +15,30 @@ One choice is conda if you have it installed via the Anaconda Python distributio
 from continuum.
 
 Using conda, we create a new environment wherein we install the modules from the requirements.txt
-
+<pre>
+<code>
 conda create -n new_env --file ./requirements.txt
 source activate new_env
-
+</code>
+</pre>
 Alternatively, we can use pip, either with system pip or virtualenv pip as follows:
-
+<pre>
+<code>
 pip install -r ./requirements.txt
+</code>
+</pre>
+
+Try to figure out where the scripts get installed when you run one of those commands.
+<pre>
+<code>
+echo $(dirname $(which python))
+</code>
+</pre>
+In the parent of that directory, look for lib/python2.7/site-packages/<package_name>. For me this means I run the REST API handler script with this:
+<pre>
+<code>
+python  /Users/psteinberg/anaconda/envs/new_env/lib/python2.7/site-packages/myorg/package1/scripts/rest_api_handler.py
+</code>
+</pre>
+The setup.py script defines several entry_points.  Look at setup.py and see if you can figure out where the installed entry points are.
+
